@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -81,9 +82,16 @@ fun MentalHealthSupport(navHostController: NavHostController) {
             val screenWidth = configuration.screenWidthDp
             val cardWidth = screenWidth - 10
             // Cards
-            userTypes.forEach { userType ->
-                //User Card
-                UserCard(userType,cardWidth.dp)
+//            userTypes.forEach { userType ->
+//                //User Card
+//                UserCard(userType,cardWidth.dp)
+//            }
+            LazyColumn {
+                userTypes.forEach { userType ->
+                    item {
+                        UserCard(userType,cardWidth.dp)
+                    }
+                }
             }
         }
     }
@@ -148,7 +156,7 @@ fun MainBottomBar(navHostController: NavHostController) {
         ) {
             BottomBarItem(icon = R.drawable.home_fill, label = "Home", onClick = { navHostController.navigate("Home"){ launchSingleTop = true } })
             BottomBarItem(icon = R.drawable.discover, label = "Nav", onClick = { navHostController.navigate("DiscoverScreen"){ launchSingleTop = true } })
-            BottomBarItem(icon = R.drawable.vector, label = "Cart", onClick = { navHostController.navigate(""){ launchSingleTop = true }})
+            BottomBarItem(icon = R.drawable.vector, label = "Cart", onClick = { navHostController.navigate("DoctorRegistrationScreen"){ launchSingleTop = true }})
             BottomBarItem(icon = R.drawable.bell, label = "Notification", onClick = { navHostController.navigate("AdvanceBooking"){ launchSingleTop = true } })
             BottomBarItem(icon = R.drawable.person, label = "Account", onClick = { navHostController.navigate("ProfileScreen"){ launchSingleTop = true } })
         }

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReliefNet">
         <activity
+            android:name=".userInterface.TryActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -23,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".auth.GoogleAuthActivity"/>
+        <activity android:name=".auth.GoogleAuthActivity" />
     </application>
 
 </manifest>

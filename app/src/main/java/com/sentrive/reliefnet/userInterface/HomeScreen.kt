@@ -56,6 +56,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -95,7 +96,11 @@ fun HomePage(navHostController: NavHostController){
     )
     {
         //Background Image
-        BackgroungImage()
+        Image(painter = painterResource(R.drawable.bg),
+            contentDescription = null,
+            Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
 
         Scaffold(
             containerColor = Color.Transparent,
@@ -159,8 +164,10 @@ fun HomePage(navHostController: NavHostController){
 fun BackgroungImage(){
     Image(painter = painterResource(R.drawable.bg),
         contentDescription = null,
-        Modifier.fillMaxSize()
+        Modifier.fillMaxSize(),
+        contentScale = ContentScale.Crop
     )
+
 }
 @Composable
 fun SearchCard(backgroundColor : Long, width: Dp){

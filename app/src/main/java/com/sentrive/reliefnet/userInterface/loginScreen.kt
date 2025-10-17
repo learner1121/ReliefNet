@@ -105,7 +105,7 @@ fun LoginScreen(navHostController: NavHostController){
             , horizontalAlignment = Alignment.CenterHorizontally){
 
             //Logo and Text function
-            LogoWithText()
+            LogoWithText("Bridging Care, Compassion, and Connection")
 
             Column (Modifier
                 .fillMaxWidth()
@@ -121,6 +121,7 @@ fun LoginScreen(navHostController: NavHostController){
                 Spacer(Modifier.height(8.dp))
                 Text("Enter your Email to Sign Up for this App",
                     fontFamily = interFontFamily,
+                    fontSize = 12.sp,
                     color = Color.White)
                 Spacer(Modifier.height(16.dp))
 
